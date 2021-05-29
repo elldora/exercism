@@ -1,12 +1,11 @@
 def convert(number):
-    Pling, Plang, Plong = "", "", ""
-    num = number
-    if number%3==0:
-        Pling, num = 'Pling', ''
-    if number%5==0:
-        Plang, num = 'Plang', ''
-    if number%7==0:
-        Plong, num= 'Plong', ''
-            
-    return f"{num}{Pling}{Plang}{Plong}"
+	sound = ("Pling", "Plang", "Plong")
+	numbers = (3, 5, 7)
+	result = ""
+	
+	for i in range(len(numbers)):
+		if number%numbers[i]==0:
+			result+=sound[i]
+			
+	return result if len(result)!=0 else f"{number}" 
     

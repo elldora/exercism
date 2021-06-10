@@ -1,11 +1,8 @@
 def convert(number):
-	sound = ("Pling", "Plang", "Plong")
-	numbers = (3, 5, 7)
+	numSound = {3:"Pling", 5:"Plang", 7:"Plong"}
 	result = ""
-	
-	for i in range(len(numbers)):
-		if number%numbers[i]==0:
-			result+=sound[i]
-			
+	for num, sound in (numSound.items()):
+		if number%num==0:
+			result+=sound
 	return result if len(result)!=0 else f"{number}" 
     
